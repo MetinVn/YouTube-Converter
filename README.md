@@ -1,5 +1,7 @@
 # YouTube Link to MP3/MP4 Converter
 
+> **Note:** This site is currently disabled due to excessive API request abuse. If you want to use this site, you can first fork this repository and add your own API key for conversions.
+
 ## Tech Stack
 
 - **React**: A JavaScript library for building user interfaces.
