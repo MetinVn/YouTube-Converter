@@ -1,4 +1,4 @@
-import { firestore } from "../../firebase";
+import { firestore } from "../../../firebase";
 import { collection, getDocs } from "firebase/firestore";
 
 export const getAllMP3s = async (user, loadingState) => {

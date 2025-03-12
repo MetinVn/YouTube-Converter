@@ -1,6 +1,6 @@
 import axios from "axios";
-import { getAllMP3s } from "../database/music/getAllMP3";
-import { refreshMP3 } from "../database/music/refreshMP3";
+import { getAllMP3s } from "../database/music/firebase/getAllMP3";
+import { refreshMP3 } from "../database/music/firebase/refreshMP3";
 
 export const refreshMP3Link = async (itemUrl, youtubeID, setMp3List, toast, fileSize, authUser, loadingUser) => {
   try {

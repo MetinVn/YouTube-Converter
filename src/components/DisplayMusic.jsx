@@ -3,19 +3,10 @@ import Button from "./Button";
 import ResultLink from "./ResultLink";
 import LoadingAnimation from "./LoadingAnimation";
 import { formatFileSize } from "../utils/FormatFileSize";
-import { deleteMP3 } from "../database/music/deleteMP3";
+import { deleteMP3 } from "../database/music/firebase/deleteMP3";
 import { FiPlay } from "react-icons/fi";
 
-const DisplayMusic = ({
-  authUser,
-  loadingRefresh,
-  refreshMP3Link,
-  setCurrentMP3,
-  mp3List,
-  setMP3List,
-  loading,
-  toast,
-}) => {
+const DisplayMusic = ({ authUser, loadingRefresh, refreshMP3Link, setCurrentMP3, mp3List, setMP3List, loading, toast }) => {
   const [filteredMP3s, setFilteredMP3s] = useState(mp3List);
   const [refreshingItem, setRefreshingItem] = useState(null);
 
@@ -66,9 +57,7 @@ const DisplayMusic = ({
               {filteredMP3s.map((item) => (
                 <tr
                   key={item.youtubeID}
-                  className={`${
-                    refreshingItem === item.url ? "opacity-50" : "hover:bg-[#2c2c2c]"
-                  } transition-colors duration-200`}>
+                  className={`${refreshingItem === item.url ? "opacity-50" : "hover:bg-[#2c2c2c]"} transition-colors duration-200`}>
                   <td className="p-1 sm:p-3 text-center">
                     <button
                       onClick={() => handlePlaySong(item)}

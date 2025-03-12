@@ -55,7 +55,10 @@ const Modal = ({ isOpen = false, onClose = () => {}, paragraph = "", description
                 </Button>
                 <Button
                   type="button"
-                  onClick={handleNavigate}
+                  onClick={() => {
+                    handleNavigate();
+                    onClose();
+                  }}
                   className="bg-[#4CAF50] px-6 py-2 text-white font-medium rounded-md hover:bg-[#388E3C] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#4CAF50]">
                   Sign in
                 </Button>

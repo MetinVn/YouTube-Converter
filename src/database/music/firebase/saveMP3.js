@@ -1,6 +1,6 @@
-import { firestore } from "../../firebase";
+import { firestore } from "../../../firebase";
 import { doc, setDoc } from "firebase/firestore";
-import { auth } from "../../firebase";
+import { auth } from "../../../firebase";
 
 export async function saveMP3(mp3) {
   try {

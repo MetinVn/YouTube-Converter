@@ -20,22 +20,18 @@ const DisplayArtist = ({ loadingRefresh, mp3List, refreshMP3Link, loading }) => 
         const blob = await response.blob();
         const metadata = await parseBlob(blob);
 
-        // Ensure the artist is known, or fallback to "Unknown Artist"
         const artist = metadata.common.artist || "Unknown Artist";
         const songTitle = mp3.title;
 
         setArtists((prevArtists) => {
           const updatedArtists = new Map(prevArtists);
 
-          // Check if artist already exists in the Map
           if (updatedArtists.has(artist)) {
-            // If artist exists, add the song if it's not already there
             const existingSongs = updatedArtists.get(artist);
             if (!existingSongs.includes(songTitle)) {
-              existingSongs.push(songTitle); // Add the song title if it's not a duplicate
+              existingSongs.push(songTitle);
             }
           } else {
-            // Otherwise, create a new entry for the artist with the song
             updatedArtists.set(artist, [songTitle]);
           }
           return updatedArtists;

@@ -1,7 +1,7 @@
 import axios from "axios";
 import { youtube_parser } from "./YoutubeParser";
 import "react-toastify/dist/ReactToastify.css";
-import { saveMP3 } from "../database/music/saveMP3";
+import { saveMP3 } from "../database/music/firebase/saveMP3";
 
 export const fetchMP3Data = async (e, mp3inputUrl, setMP3List, toast) => {
   e.preventDefault();

@@ -1,5 +1,5 @@
 import React, { createContext, useState, useContext, useEffect } from "react";
-import { getAllMP3s } from "../database/music/getAllMP3";
+import { getAllMP3s } from "../database/music/firebase/getAllMP3";
 import { UserContext } from "./UserContext";
 
 export const MP3Context = createContext(null);

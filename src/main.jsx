@@ -24,27 +24,25 @@ const BugReport = lazy(() => import("./pages/BugReport.jsx"));
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <Router>
-      <UserProvider>
-        <MP3Provider>
-          <Header />
-          <Suspense fallback={<PageFallback />}>
-            <Routes>
-              <Route exact path="/account" element={<ProtectedRoute element={<Account />} />} />
-              <Route exact path="/music-list" element={<ProtectedRoute element={<MP3Dashboard />} />} />
-              <Route exact path="/account/edit" element={<ProtectedRoute element={<EditProfile />} />} />
-              <Route exact path="/bug-report" element={<ProtectedRoute element={<BugReport />} />} />
-              <Route exact index path="/" element={<App />} />
-              <Route exact path="/signin" element={<Signin />} />
-              <Route exact path="/login" element={<Login />} />
-              <Route exact path="/credits" element={<Credits />} />
-              <Route exact path="/reset-password" element={<ForgotPassword />} />
-              <Route exact path="*" element={<ErrorPage />} />
-            </Routes>
-          </Suspense>
-        </MP3Provider>
-      </UserProvider>
-    </Router>
-  </React.StrictMode>
+  <Router>
+    <UserProvider>
+      <MP3Provider>
+        <Header />
+        <Suspense fallback={<PageFallback />}>
+          <Routes>
+            <Route exact path="/account" element={<ProtectedRoute element={<Account />} />} />
+            <Route exact path="/music-list" element={<ProtectedRoute element={<MP3Dashboard />} />} />
+            <Route exact path="/account/edit" element={<ProtectedRoute element={<EditProfile />} />} />
+            <Route exact path="/bug-report" element={<ProtectedRoute element={<BugReport />} />} />
+            <Route exact index path="/" element={<App />} />
+            <Route exact path="/signin" element={<Signin />} />
+            <Route exact path="/login" element={<Login />} />
+            <Route exact path="/credits" element={<Credits />} />
+            <Route exact path="/reset-password" element={<ForgotPassword />} />
+            <Route exact path="*" element={<ErrorPage />} />
+          </Routes>
+        </Suspense>
+      </MP3Provider>
+    </UserProvider>
+  </Router>
 );

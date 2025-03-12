@@ -1,6 +1,6 @@
-import { firestore } from "../../firebase";
+import { firestore } from "../../../firebase";
 import { doc, updateDoc } from "firebase/firestore";
-import { auth } from "../../firebase";
+import { auth } from "../../../firebase";
 
 export async function refreshMP3(youtubeID, updatedFields) {
   try {
